@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html  xmlns:th="https://www.thymeleaf.org">
+  <head>
+    <meta charset="ISO-8859-1">
+    <title>Student Management System</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+  </head>
+  <body>
+  <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <!-- Brand -->
+  <a class="navbar-brand" href="#">Student Management System</a>
+
+  <!-- Toggler/collapsibe Button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- Navbar links -->
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/singlerecod}">Student management System</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div class="container">
+  <div class="row">
+  <div class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+  <h1 class="text-center">Login</h1>
+  <div class="card-body">
+  <form th:action="@{/singlerecord}" th:object="${student}" method="post">
+  
+	 <div class="form-group">
+	  <label>Seat No</label>
+	  <input 
+	  type="text"
+	  name="seatNo"
+	  field="*{seatNo}"
+	  class="form-control"
+	  placeholder="Enter seatNo"/> 
+	  </div>
+	  <label>DOB</label>
+	  <input 
+	  type="date"
+	  name="dob"
+	  field="*{dob}"
+	  class="form-control"
+	  placeholder="Enter DOB"/>
+	  </div>
+	  <div class="box-footer">
+	  <button type="submit" class="btn btn-primary">Login</button>
+	  </div>
+  </body>
+</html>
